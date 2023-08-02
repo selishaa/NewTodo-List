@@ -1,32 +1,46 @@
+import React from 'react';
 import Todoitem from './Todo';
-import addTodo from './addTodo';
-import React from 'react'
 
 const Todos = (props) => {
-  let myStyle = {
-    minHeight: "70vf",
-  }
-  return (
-    <div className='container my-1' style={myStyle}> 
-    <h3 className=' my-3'>My Todos List</h3> 
-    {props.todos.length===0? "No Todos to display":
-    props.todos.map((todo)=>{
-     
-      return ( <Todoitem todo={todo} key={todo.sno}onDelete={props.onDelete}/> 
+  const todosContainerStyle = {
+    backgroundColor: '#f1f1f1',
+    marginTop: '60px',
+    padding: '20px',
+    borderRadius: '8px',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
     
-        
-      )
-   
-  }
- 
-  )}
-  
-  
-     
-     
+  };
+
+  const todosHeadingStyle = {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    marginBottom: '20px',
+    color: '#333',
+    textAlign: 'center',
+  };
+
+  const noTodosMessageStyle = {
+    fontSize: '18px',
+    fontStyle: 'italic',
+    color: '#777',
+    textAlign: 'center',
+  };
+
+  return (
+    <div className='container my-3'>
+      <div style={todosContainerStyle}>
+        <h3 style={todosHeadingStyle}>My Todos List</h3>
+        {props.todos.length === 0 ? (
+          <p style={noTodosMessageStyle}>No Todos to display</p>
+        ) : (
+          props.todos.map((todo) => (
+            <Todoitem todo={todo} key={todo.sno} onDelete={props.onDelete} />
+          ))
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
+export default Todos;
 
-export default Todos

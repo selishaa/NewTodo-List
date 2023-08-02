@@ -1,27 +1,27 @@
-import React from 'react'
+import React from 'react';
 
- export const footer = () => {
-  let footerStyle = {
-    position: "relative",
-    top: "100vh",
-    width: "100%",
-    border: "2px solid green"
-  }
+const Footer = () => {
+  const footerStyle = {
+    position: 'fixed',
+    bottom: 0,
+    width: '100%',
+    backgroundColor: '#333',
+    color: '#fff',
+    textAlign: 'center',
+    padding: '10px 0',
+  };
+
+  const copyrightStyle = {
+    fontSize: '14px',
+  };
+
   return (
-   
-  <div className="bg-dark text-light py-3 " style={footerStyle}>
-    <p className='text-center'>
-    Copyright &copy; MyTodoList.com
-    </p>
-   
-
-  
-     
+    <div style={footerStyle}>
+      <p style={copyrightStyle}>
+        &copy; MyTodoList.com {new Date().getFullYear()}
+      </p>
     </div>
+  );
+};
 
-
-  )
-}
-
-
-export default footer
+export default Footer;
