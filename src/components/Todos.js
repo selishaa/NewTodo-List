@@ -12,10 +12,8 @@ const Todos = (props) => {
     {props.todos.length===0? "No Todos to display":
     props.todos.map((todo)=>{
      
-      return (
-        <>
-         <Todoitem todo={todo} key={todo.sno}onDelete={props.onDelete}/> <hr/>
-        </>
+      return ( <Todoitem todo={todo} key={todo.sno}onDelete={props.onDelete}/> 
+    
         
       )
    
